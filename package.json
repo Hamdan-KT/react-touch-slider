@@ -4,10 +4,10 @@
 	"version": "0.0.1",
 	"description": "Touch and drag slider component for React",
 	"type": "module",
-	"author": "hamdan",
+	"author": "Hamdan-KT",
 	"license": "MIT",
-	"repository": "hamdan/react-touch-drag-slider",
-	"homepage": "https://github.com/hamdan/react-touch-drag-slider",
+	"repository": "Hamdan-KT/react-touch-slider",
+	"homepage": "https://github.com/Hamdan-KT/react-touch-slider",
 	"keywords": [
 		"pointer",
 		"mouse",
@@ -53,9 +53,9 @@
 	"files": [
 		"dist"
 	],
-  "publishConfig": {
-    "access": "public"
-  },
+	"publishConfig": {
+		"access": "public"
+	},
 	"module": "./dist/shared.es.js",
 	"main": "./dist/shared.es.js",
 	"exports": {
