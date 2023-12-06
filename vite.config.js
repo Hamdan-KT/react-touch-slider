@@ -7,7 +7,7 @@ export default defineConfig({
 	build: {
 		lib: {
 			entry: path.resolve(__dirname, "src/shared/index.js"),
-			name: "react-touch-slider",
+			name: "react-touch-swiper",
 			formats: ["es", "umd"],
 			fileName: (format) => `shared.${format}.js`,
 		},

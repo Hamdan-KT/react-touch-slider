@@ -1,13 +1,13 @@
 {
-	"name": "react-touch-slider",
+	"name": "react-touch-swiper",
 	"private": false,
 	"version": "0.0.1",
 	"description": "Touch and drag slider component for React",
 	"type": "module",
 	"author": "Hamdan-KT",
 	"license": "MIT",
-	"repository": "Hamdan-KT/react-touch-slider",
-	"homepage": "https://github.com/Hamdan-KT/react-touch-slider",
+	"repository": "Hamdan-KT/react-touch-swiper",
+	"homepage": "https://github.com/Hamdan-KT/react-touch-swiper",
 	"keywords": [
 		"pointer",
 		"mouse",

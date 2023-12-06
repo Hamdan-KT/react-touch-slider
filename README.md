@@ -1,4 +1,4 @@
-# react-touch-slider
+# react-touch-swiper
 
 > Touch and drag slider component for React
 
@@ -14,14 +14,14 @@
 ## Install
 
 ```bash
-npm i react-touch-slider
+npm i react-touch-swiper
 ```
 
 ## Usage
 
 ```jsx
 import React from 'react'
-import { Slider } from 'react-touch-slider'
+import { Slider } from 'react-touch-swiper'
 
 // here we are importing some images
 // but the Slider children should be an array of node like img
