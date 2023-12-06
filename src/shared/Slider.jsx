@@ -27,6 +27,7 @@ export default function Slider({
 	threshHold = 100,
 	transition = 0.3,
 	scaleEffect = false,
+	style = {}
 }) {
 	const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 	const sliderRef = useRef();
@@ -213,6 +214,7 @@ export default function Slider({
 				overflow: "hidden",
 				maxHeight: "100vh",
 				position: "relative",
+				...style
 			}}
 		>
 			{/* slider section */}
