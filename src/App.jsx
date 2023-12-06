@@ -15,7 +15,6 @@ function App() {
 					<Slider scaleEffect keyEvent>
 						{images?.map((img, index) => (
 							<img
-								style={{ maxWidth: "100%", maxHeight: "100%" }}
 								src={img}
 								alt="Image Not Fount"
 								key={index}
@@ -27,7 +26,6 @@ function App() {
 					<Slider scaleEffect>
 						{images?.map((img, index) => (
 							<img
-								style={{ maxWidth: "100%", maxHeight: "100%" }}
 								src={img}
 								alt="Image Not Fount"
 								key={index}
@@ -39,7 +37,6 @@ function App() {
 					<Slider scaleEffect>
 						{images?.map((img, index) => (
 							<img
-								style={{ maxWidth: "100%", maxHeight: "100%" }}
 								src={img}
 								alt="Image Not Fount"
 								key={index}
@@ -51,7 +48,6 @@ function App() {
 					<Slider scaleEffect>
 						{images?.map((img, index) => (
 							<img
-								style={{ maxWidth: "100%", maxHeight: "100%" }}
 								src={img}
 								alt="Image Not Fount"
 								key={index}
@@ -63,7 +59,6 @@ function App() {
 					<Slider scaleEffect>
 						{images?.map((img, index) => (
 							<img
-								style={{ maxWidth: "100%", maxHeight: "100%" }}
 								src={img}
 								alt="Image Not Fount"
 								key={index}

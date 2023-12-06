@@ -21,7 +21,7 @@ npm i react-touch-slider
 
 ```jsx
 import React from 'react'
-import Slider from 'react-touch-slider'
+import { Slider } from 'react-touch-slider'
 
 // here we are importing some images
 // but the Slider children should be an array of node like img
