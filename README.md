@@ -32,14 +32,14 @@ import images from './images'
 function App() {
   return (
     <Slider
-      onSlideComplete={(i) => {
-        console.log('finished dragging, current slide is', i)
+      onSlideComplete={(event,slideIndex) => {
+        console.log('sliding completed', slideIndex)
       }}
-      onSlide={(i) => {
-        console.log("sliding", i)
+      onSlide={(event,slideIndex) => {
+        console.log("sliding", slideIndex)
       }}
-      onSlideStart={(i) => {
-        console.log('started dragging on slide', i)
+      onSlideStart={(event,slideIndex) => {
+        console.log('sliding started', slideIndex)
       }}
       keyEvent={false}
       controllButton={false}
@@ -62,9 +62,9 @@ export default App
 
 | Prop            | Type                             | Default | Description                                                         |
 | --------------- | -------------------------------- | ------- | ------------------------------------------------------------------- |
-| onSlideComplete | (completedIndex: number) => void |         | A function that gets called when sliding completed                            |
-| onSlideStart    | (startIndex: number) => void     |         | A function that gets called when sliding started                                |
-| onSliding       | (currentIndex: number) => void |         | A function that gets called when sliding
+| onSlideComplete | (event: eventObject, completedIndex: number) => void |         | A function that gets called when sliding completed                            |
+| onSlideStart    | (event: eventObject, startedIndex: number) => void     |         | A function that gets called when sliding started                                |
+| onSliding       | (event: eventObject, currentIndex: number) => void |         | A function that gets called when sliding
 | activeIndex     | number                           | 0       | Set to start on this index or use state to update the current index |
 | threshHold      | number                           | 100     | A pixel value that must be dragged before slide snaps to its position customise with your value according to size of the window   |
 | transition      | number                           | 0.3     | The transition delay in seconds  |
