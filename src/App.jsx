@@ -12,57 +12,37 @@ function App() {
 					</h3>
 				</u>
 				<div className="container">
-					<Slider scaleEffect keyEvent>
+					<Slider>
 						{images?.map((img, index) => (
-							<img
-								src={img}
-								alt="Image Not Fount"
-								key={index}
-							/>
+							<img src={img} alt="Image Not Fount" key={index} />
 						))}
 					</Slider>
 				</div>
 				<div className="box-1">
 					<Slider scaleEffect>
 						{images?.map((img, index) => (
-							<img
-								src={img}
-								alt="Image Not Fount"
-								key={index}
-							/>
+							<img src={img} alt="Image Not Fount" key={index} />
 						))}
 					</Slider>
 				</div>
 				<div className="box-2">
 					<Slider scaleEffect>
 						{images?.map((img, index) => (
-							<img
-								src={img}
-								alt="Image Not Fount"
-								key={index}
-							/>
+							<img src={img} alt="Image Not Fount" key={index} />
 						))}
 					</Slider>
 				</div>
 				<div className="box-3">
 					<Slider scaleEffect>
 						{images?.map((img, index) => (
-							<img
-								src={img}
-								alt="Image Not Fount"
-								key={index}
-							/>
+							<img src={img} alt="Image Not Fount" key={index} />
 						))}
 					</Slider>
 				</div>
 				<div className="box-4">
 					<Slider scaleEffect>
 						{images?.map((img, index) => (
-							<img
-								src={img}
-								alt="Image Not Fount"
-								key={index}
-							/>
+							<img src={img} alt="Image Not Fount" key={index} />
 						))}
 					</Slider>
 				</div>
