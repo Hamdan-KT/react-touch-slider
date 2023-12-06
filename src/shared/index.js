@@ -1,3 +1,1 @@
-// import Slider from "./Slider";
-// export default Slider
-export { Slider } from "./Slider.jsx";
+export { default as Slider } from "./Slider";
