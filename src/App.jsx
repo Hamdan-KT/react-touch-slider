@@ -12,7 +12,7 @@ function App() {
 					</h3>
 				</u>
 				<div className="container">
-					<Slider scaleEffect>
+					<Slider scaleEffect keyEvent>
 						{images?.map((img, index) => (
 							<img
 								style={{ maxWidth: "100%", maxHeight: "100%" }}

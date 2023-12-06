@@ -20,7 +20,7 @@ export default function Slider({
 	children,
 	onSlideStart,
 	onSlideComplete,
-	onSlide,
+	onSliding,
 	keyEvent = false,
 	controllButton = false,
 	activeIndex = null,
@@ -107,23 +107,27 @@ export default function Slider({
 				setSliderPositionByIndex();
 			}
 		}
+
 		// function handle arrow key event
-		const handleKeyDown = ({ key }) => {
+		const handleKeyDown = (event) => {
 			if (keyEvent) {
-				const arrowsPressed = ["ArrowRight", "ArrowLeft"].includes(key);
+				const arrowsPressed = ["ArrowRight", "ArrowLeft"].includes(event.key);
 				if (arrowsPressed) enableTransition();
+				onSlideStart && onSlideStart(event, currentIndex.current);
 				if (
-					key === "ArrowRight" &&
+					event.key === "ArrowRight" &&
 					currentIndex.current < children.length - 1
 				) {
 					currentIndex.current += 1;
 				}
-				if (key === "ArrowLeft" && currentIndex.current > 0) {
+				if (event.key === "ArrowLeft" && currentIndex.current > 0) {
 					currentIndex.current -= 1;
 				}
+				onSlideComplete && onSlideComplete(event, currentIndex.current);
 				setSliderPositionByIndex();
 			}
 		};
+
 		window.addEventListener("resize", handleResize);
 		keyEvent && window.addEventListener("keydown", handleKeyDown);
 		// clean up function listener
@@ -131,7 +135,7 @@ export default function Slider({
 			window.removeEventListener("resize", handleResize);
 			keyEvent && window.removeEventListener("keydown", handleKeyDown);
 		};
-	}, [setSliderPositionByIndex, keyEvent, enableTransition, children.length]);
+	}, [setSliderPositionByIndex, keyEvent, enableTransition, onSlideComplete, onSlideStart, children.length]);
 
 	// pointer start function
 	function pointerStart(index) {
@@ -146,6 +150,7 @@ export default function Slider({
 			animationID.current = requestAnimationFrame(animation);
 			// set grabbin style to slider
 			if (sliderRef.current) sliderRef.current.style.cursor = "grabbing";
+			onSlideStart && onSlideStart(event, index)
 		};
 	}
 	// pointer move function
@@ -159,10 +164,11 @@ export default function Slider({
 			// currentTranslate will be = 300 + 40 - 10
 			// 40 - 10 = 30
 			// 300 + 30 = 330
+			onSliding && onSliding(event, currentIndex.current)
 		}
 	}
 	// pointer end function
-	function pointerEnd() {
+	function pointerEnd(event) {
 		enableTransition();
 		cancelAnimationFrame(animationID.current);
 		isDragging.current = false;
@@ -183,6 +189,7 @@ export default function Slider({
 		setSliderPositionByIndex();
 		// change style to grab
 		sliderRef.current.style.cursor = "grab";
+		onSlideComplete && onSlideComplete(event, currentIndex.current)
 	}
 
 	function handleClick(dir) {
