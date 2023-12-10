@@ -27,6 +27,8 @@ export default function Slider({
 	threshHold = 100,
 	transition = 0.3,
 	scaleEffect = false,
+	autoSlideTimeInterval = 3000,
+	autoSliding = false,
 	style = {}
 }) {
 	const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -95,6 +97,32 @@ export default function Slider({
 		}
 	}, [activeIndex, setSliderPositionByIndex, enableTransition]);
 
+	// handle auto slide
+	useEffect(() => {
+		let interval;
+
+		if (autoSliding) {
+			interval = setInterval(() => {
+				enableTransition();
+				if (currentIndex.current === children.length - 1) {
+					currentIndex.current = 0;
+				} else {
+					currentIndex.current += 1;
+				}
+				// set slider position by index
+				setSliderPositionByIndex();
+			}, autoSlideTimeInterval);
+		}
+		// clearn up function
+		return () => clearInterval(interval);
+	}, [
+		autoSlideTimeInterval,
+		enableTransition,
+		setSliderPositionByIndex,
+		autoSliding,
+		children.length,
+	]);
+
 	// window resize listener
 	useEffect(() => {
 		// function to resize based on window
@@ -136,7 +164,14 @@ export default function Slider({
 			window.removeEventListener("resize", handleResize);
 			keyEvent && window.removeEventListener("keydown", handleKeyDown);
 		};
-	}, [setSliderPositionByIndex, keyEvent, enableTransition, onSlideComplete, onSlideStart, children.length]);
+	}, [
+		setSliderPositionByIndex,
+		keyEvent,
+		enableTransition,
+		onSlideComplete,
+		onSlideStart,
+		children.length,
+	]);
 
 	// pointer start function
 	function pointerStart(index) {
@@ -151,7 +186,7 @@ export default function Slider({
 			animationID.current = requestAnimationFrame(animation);
 			// set grabbin style to slider
 			if (sliderRef.current) sliderRef.current.style.cursor = "grabbing";
-			onSlideStart && onSlideStart(event, index)
+			onSlideStart && onSlideStart(event, index);
 		};
 	}
 	// pointer move function
@@ -165,7 +200,7 @@ export default function Slider({
 			// currentTranslate will be = 300 + 40 - 10
 			// 40 - 10 = 30
 			// 300 + 30 = 330
-			onSliding && onSliding(event, currentIndex.current)
+			onSliding && onSliding(event, currentIndex.current);
 		}
 	}
 	// pointer end function
@@ -190,7 +225,7 @@ export default function Slider({
 		setSliderPositionByIndex();
 		// change style to grab
 		sliderRef.current.style.cursor = "grab";
-		onSlideComplete && onSlideComplete(event, currentIndex.current)
+		onSlideComplete && onSlideComplete(event, currentIndex.current);
 	}
 
 	function handleClick(dir) {
@@ -214,7 +249,7 @@ export default function Slider({
 				overflow: "hidden",
 				maxHeight: "100vh",
 				position: "relative",
-				...style
+				...style,
 			}}
 		>
 			{/* slider section */}

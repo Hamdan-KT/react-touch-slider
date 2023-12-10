@@ -71,6 +71,9 @@ export default App
 | scaleEffect     | boolean                          | false   | scale effect for individual slides while dragging                    |
 | keyEvent        | boolean                          | false   | Enable arrow key navigation  |
 | controllButton  | boolean                          | false   | Show control buttons                  |
+| autoSliding  | boolean                          | false   | enable auto sliding based time interval              |
+| autoSlideTimeInterval  | number                         | 3000 in ms  | specific auto sliding time interval in ms                  |
+| style  | object                         | {}  | specific custom style to slider parent component (width, height, etc ..)               |
 
 
 ## License
