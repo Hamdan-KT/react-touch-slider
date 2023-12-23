@@ -73,6 +73,7 @@ export default App
 | controllButton  | boolean                          | false   | Show control buttons                  |
 | autoSliding  | boolean                          | false   | enable auto sliding based on time interval              |
 | autoSlideTimeInterval  | number                         | 3000 | specific auto sliding time interval in ms                  |
+|disableDefaultPadding  | boolean                         | false | remove default padding of slide element (0.3rem)                |
 | style  | object                         | {}  | specific custom style to slider parent component (width, height, etc ..)               |
 
 
