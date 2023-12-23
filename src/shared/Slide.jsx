@@ -21,6 +21,10 @@ export default function Slide({ child, sliderWidth, sliderHeight, scaleEffect = 
 						max-width: 100%;
 						max-height: 100%;
 					}
+					.tttt-slider-slide-box video {
+						max-width: 100%;
+						max-height: 100%;
+					}
 				`}
 			</style>
 			<div

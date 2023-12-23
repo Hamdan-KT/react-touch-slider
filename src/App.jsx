@@ -12,7 +12,7 @@ function App() {
 					</h3>
 				</u>
 				<div className="container">
-					<Slider>
+					<Slider controllButton>
 						{images?.map((img, index) => (
 							<img src={img} alt="Image Not Fount" key={index} />
 						))}
