@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 
 
 const css = String.raw;
-export default function Slide({ child, sliderWidth, sliderHeight, scaleEffect = false }) {
+export default function Slide({ child, sliderWidth, disableDefaultPadding = false, sliderHeight, scaleEffect = false }) {
 	const slideRef = useRef();
 	const pointerDown = () => {
 		if (scaleEffect && slideRef.current)
@@ -38,7 +38,7 @@ export default function Slide({ child, sliderWidth, sliderHeight, scaleEffect = 
 			>
 				<div
 					style={{
-						padding: "0.3rem",
+						padding: disableDefaultPadding ? "0rem" : "0.3rem",
 						height: "100%",
 						display: "flex",
 						alignItems: "center",

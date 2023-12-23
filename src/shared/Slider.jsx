@@ -283,6 +283,7 @@ export default function Slider({
 						style={{ touchAction: "none", userSelect: "none" }}
 					>
 						<Slide
+							disableDefaultPadding={disableDefaultPadding}
 							child={child}
 							sliderWidth={dimensions.width}
 							sliderHeight={dimensions.height}
