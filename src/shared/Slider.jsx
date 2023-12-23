@@ -29,6 +29,7 @@ export default function Slider({
 	scaleEffect = false,
 	autoSlideTimeInterval = 3000,
 	autoSliding = false,
+	disableDefaultPadding = false,
 	style = {}
 }) {
 	const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
